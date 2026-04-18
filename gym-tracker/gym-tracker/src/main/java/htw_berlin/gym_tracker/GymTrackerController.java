@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@RestController
 public class GymTrackerController {
 
     @GetMapping
@@ -14,7 +15,7 @@ public class GymTrackerController {
         return "Hello World";
     }
 
-    @GetMapping(path="/GymTracker")
+    @GetMapping(path="/exercises")
     public List<Exercise> getAllExercises() {
         return List.of(
                 new Exercise("Hip Thrust", "Glutes"),
