@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@CrossOrigin(origins = { "http://localhost:5173", "https://gym-tracker-backend-1ofx.onrender.com"
+@CrossOrigin(origins = { "http://localhost:5173", "https://gym-tracker-frontend-nsbu.onrender.com/"
         })
 @RestController
 public class GymTrackerController {
