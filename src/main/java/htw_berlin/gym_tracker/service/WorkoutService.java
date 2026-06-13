@@ -5,6 +5,8 @@ import htw_berlin.gym_tracker.repository.WorkoutRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class WorkoutService {
 
@@ -17,5 +19,8 @@ public class WorkoutService {
 
     public Workout get(Long id) {
         return workoutRepo.findById(id).orElseThrow(() -> new RuntimeException("Workout nicht gefunden!"));
+    }
+    public List<Workout> getAll() {
+        return workoutRepo.findAll();
     }
 }

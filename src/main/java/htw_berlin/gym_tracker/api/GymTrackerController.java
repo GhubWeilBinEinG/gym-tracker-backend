@@ -62,9 +62,6 @@ public class GymTrackerController {
 
     @GetMapping(path="/workout")
     public List<Workout> getAllWorkout() {
-        return List.of(
-                new Workout("Lower", "Hip Thrust",12,3),
-                new Workout("Lower", "Squat",12,3)
-        );
+        return workoutService.getAll();
     }
 }
