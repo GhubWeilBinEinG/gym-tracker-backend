@@ -10,6 +10,8 @@ public class Exercise {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String name;
     private String muscleGroup;
 
@@ -24,7 +26,7 @@ public class Exercise {
         return name;
     }
 
-    public void setName(String name, String muscleGroup) {
+    public void setName(String name) {
         this.name = name;
     }
 

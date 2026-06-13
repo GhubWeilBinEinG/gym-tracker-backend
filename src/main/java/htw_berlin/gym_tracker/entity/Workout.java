@@ -11,6 +11,8 @@ public class Workout {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String workoutName;
     private String name;
     private int reps;
