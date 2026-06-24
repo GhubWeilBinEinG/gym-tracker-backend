@@ -1,10 +1,8 @@
 package htw_berlin.gym_tracker.entity;
 
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Workout {
@@ -14,48 +12,21 @@ public class Workout {
     private Long id;
 
     private String workoutName;
-    private String name;
-    private int reps;
-    private int sets;
+
+    @OneToMany(mappedBy = "workout", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<WorkoutExercise> exercises = new ArrayList<>();
 
     public Workout() {}
 
-    public Workout(String workoutName, String name, int reps, int sets) {
-        this.workoutName= workoutName;
-        this.name = name;
-        this.reps= reps;
-        this.sets= sets;
-    }
-
-    public String getWorkoutName() {
-        return workoutName;
-    }
-
-    public void setWorkoutName(String workoutName) {
+    public Workout(String workoutName) {
         this.workoutName = workoutName;
     }
 
-    public String getName() {
-        return name;
-    }
+    public Long getId() { return id; }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public String getWorkoutName() { return workoutName; }
+    public void setWorkoutName(String workoutName) { this.workoutName = workoutName; }
 
-    public int getReps() {
-        return reps;
-    }
-
-    public void setReps(int reps) {
-        this.reps = reps;
-    }
-
-    public int getSets() {
-        return sets;
-    }
-
-    public void setSets(int sets) {
-        this.sets = sets;
-    }
+    public List<WorkoutExercise> getExercises() { return exercises; }
+    public void setExercises(List<WorkoutExercise> exercises) { this.exercises = exercises; }
 }
