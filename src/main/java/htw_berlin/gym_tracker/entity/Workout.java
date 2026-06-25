@@ -13,7 +13,7 @@ public class Workout {
 
     private String workoutName;
 
-    @OneToMany(mappedBy = "workout", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "workout", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<WorkoutExercise> exercises = new ArrayList<>();
 
     public Workout() {}
