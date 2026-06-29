@@ -48,7 +48,6 @@ public class GymTrackerController {
         return "Hello World";
     }
 
-    // --- Exercise search via API Ninjas ---
 
     @GetMapping("/exercises/search")
     public List<ExerciseSearchResult> searchExercises(
@@ -59,8 +58,6 @@ public class GymTrackerController {
         }
         return exerciseSearchService.searchByMuscle(muscle != null ? muscle : "chest");
     }
-
-    // --- Workouts ---
 
     @PostMapping("/workout")
     public Workout createWorkout(@RequestBody Workout workout) {

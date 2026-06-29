@@ -1,39 +1,29 @@
 package htw_berlin.gym_tracker.entity;
 
-import java.util.List;
-
 public class ExerciseSearchResult {
 
-    private String id;
     private String name;
-    private String bodyPart;
-    private String target;
+    private String type;
+    private String muscle;
     private String equipment;
-    private String gifUrl;
-    private List<String> secondaryMuscles;
-    private List<String> instructions;
-
-    public String getId() { return id; }
-    public void setId(String id) { this.id = id; }
+    private String difficulty;
+    private String instructions;
 
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
 
-    public String getBodyPart() { return bodyPart; }
-    public void setBodyPart(String bodyPart) { this.bodyPart = bodyPart; }
+    public String getType() { return type; }
+    public void setType(String type) { this.type = type; }
 
-    public String getTarget() { return target; }
-    public void setTarget(String target) { this.target = target; }
+    public String getMuscle() { return muscle; }
+    public void setMuscle(String muscle) { this.muscle = muscle; }
 
     public String getEquipment() { return equipment; }
     public void setEquipment(String equipment) { this.equipment = equipment; }
 
-    public String getGifUrl() { return gifUrl; }
-    public void setGifUrl(String gifUrl) { this.gifUrl = gifUrl; }
+    public String getDifficulty() { return difficulty; }
+    public void setDifficulty(String difficulty) { this.difficulty = difficulty; }
 
-    public List<String> getSecondaryMuscles() { return secondaryMuscles; }
-    public void setSecondaryMuscles(List<String> secondaryMuscles) { this.secondaryMuscles = secondaryMuscles; }
-
-    public List<String> getInstructions() { return instructions; }
-    public void setInstructions(List<String> instructions) { this.instructions = instructions; }
+    public String getInstructions() { return instructions; }
+    public void setInstructions(String instructions) { this.instructions = instructions; }
 }
