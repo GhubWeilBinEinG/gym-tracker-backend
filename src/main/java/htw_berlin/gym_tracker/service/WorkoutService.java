@@ -14,7 +14,8 @@ public class WorkoutService {
     @Autowired
     WorkoutRepo workoutRepo;
 
-    public Workout save(Workout workout) {
+    public Workout save(Workout workout, String userId) {
+        workout.setUserId(userId);
         return workoutRepo.save(workout);
     }
 
@@ -22,8 +23,8 @@ public class WorkoutService {
         return workoutRepo.findById(id).orElseThrow(() -> new RuntimeException("Workout nicht gefunden!"));
     }
 
-    public List<Workout> getAll() {
-        return workoutRepo.findAll();
+    public List<Workout> getAll(String userId) {
+        return workoutRepo.findByUserId(userId);
     }
 
     public Workout addExercise(Long workoutId, WorkoutExercise exercise) {
